@@ -6,3 +6,4 @@ trained_models
 *.hdf5
 *.pkl
 *.pth
+.idea
