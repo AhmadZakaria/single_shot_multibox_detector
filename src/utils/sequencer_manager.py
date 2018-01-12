@@ -27,7 +27,7 @@ class SequenceManager(Sequence):
         self.prior_boxes = prior_boxes
         self.box_scale_factors = box_scale_factors
         self.batch_size = batch_size
-        self.transform = SSDAugmentation(mode, 300, (B_MEAN, G_MEAN, R_MEAN))
+        self.transform = SSDAugmentation(mode, (300,300), (B_MEAN, G_MEAN, R_MEAN))
 
     def __len__(self):
         return math.ceil(len(self.data) / self.batch_size)
