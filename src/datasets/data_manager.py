@@ -1,6 +1,6 @@
-from .voc_parser import VOCParser
 from .data_utils import get_class_names
 from .data_utils import merge_two_dictionaries
+from .voc_parser import VOCParser
 
 
 class DataManager(object):
@@ -19,10 +19,9 @@ class DataManager(object):
         self.arg_to_class = None
 
     def load_data(self):
-        if self.dataset_name == 'VOC2007':
+        if self.dataset_name in ['VOC2007', 'VOC2012']:
             ground_truth_data = self._load_VOC(self.dataset_name, self.split)
-        if self.dataset_name == 'VOC2012':
-            ground_truth_data = self._load_VOC(self.dataset_name, self.split)
+
         if isinstance(self.dataset_name, list):
             if not isinstance(self.split, list):
                 raise Exception("'split' should also be a list")
